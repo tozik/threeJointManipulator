@@ -154,6 +154,7 @@
     <ClInclude Include="Calculating.h" />
     <ClInclude Include="InteractionWithUser.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ReadingClass.h" />
     <ClInclude Include="Remy H-B method.h" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +166,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="ReadingClass.cpp" />
     <ClCompile Include="Remy H-B method.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
