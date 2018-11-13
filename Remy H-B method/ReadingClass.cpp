@@ -4,10 +4,13 @@
 #include <sstream>
 #include <fstream>
 #include <iostream>
+#include <vector>
 
 using namespace std;
+
 string fileName= "C:\\Users\\tozik\\OneDrive\\Рабочий стол\\RemyRotics\\input.in";
-std::ifstream _fileReader;
+ifstream _fileReader;
+vector<float> pointsOfMoving;
 
 ReadingClass::ReadingClass()
 {
@@ -20,12 +23,19 @@ void ReadingClass::GetLineInstructionsFromFile()
 	{
 		std::string value;
 		value.assign((std::istreambuf_iterator<char>(_fileReader.rdbuf())), std::istreambuf_iterator<char>());
-		std::cout << value;
+		cout << "\nReading finished\n";
+		//std::cout << value;
 		_fileReader.close();
+
+		string element;
+		stringstream ss(value);									//initialise string stream
+		while (ss >> element)
+			pointsOfMoving.push_back(::atof(element.c_str()));
+		for (int i = 0; i < pointsOfMoving.size(); i++)
+			cout << "Component " << i + 1 << " : " << pointsOfMoving[i] << endl;
 	}
 	else
 		std::cerr << "Unable to open file" << std::endl;
-
 }
 
 ReadingClass::~ReadingClass()
