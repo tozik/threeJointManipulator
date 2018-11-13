@@ -151,9 +151,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Calculating.h" />
+    <ClInclude Include="InteractionWithUser.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Remy H-B method.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Calculating.cpp" />
+    <ClCompile Include="InteractionWithUser.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
