@@ -36,41 +36,9 @@ void Calculating::CalculateInverseTask(float* _xPointer, float* _yPointer, float
 	*_secondJoint = (asin(_z0Projection / _xoyProjection) + _alphaAngleForCubit);
 	*_thirdJoint = (M_PI - (_betaAngleForHandBrush));
 
-	std::cout << "\nValue J1=" << _firstJoint << " in degrees";
-	std::cout << "\t\tValue J2=" << _secondJoint << " in degrees";
-	std::cout << "\t\tValue J3=" << _thirdJoint << " in degrees" << std::endl;;
-}
-
-void Calculating::CalculateDirectTask(float* _firstJointPointer, float* _secondJointPointer, float* _thirdJointPointer,
-	float* _x, float* _y, float* _z)
-{
-	*_x = std::cos(*_firstJointPointer)*
-		((_cubitLength*std::cos(*_secondJointPointer)) + (_handBrushLength*std::cos(*_secondJointPointer + *_thirdJointPointer)));
-	*_y = std::sin(*_firstJointPointer)*
-		((_cubitLength*std::cos(*_secondJointPointer)) + (_cubitLength*std::cos(*_secondJointPointer + *_thirdJointPointer)));
-	*_z = _shoulderLength +
-		((_cubitLength*std::sin(*_secondJointPointer)) + (_handBrushLength*std::sin(*_secondJointPointer + *_thirdJointPointer)));
-
-	std::cout << "\nValue X=" << _x;
-	std::cout << "\tValue Y=" << _y;
-	std::cout << "\tValue Z=" << _z << std::endl;
-
-}
-
-void Calculating::CalculateDirectTaskNotPtr(float* _firstJointPointer, float* _secondJointPointer, float* _thirdJointPointer,
-	float _x, float _y, float _z)
-{
-	_x = std::cos(*_firstJointPointer)*
-		((_cubitLength*std::cos(*_secondJointPointer)) + (_handBrushLength*std::cos(*_secondJointPointer + *_thirdJointPointer)));
-	_y = std::sin(*_firstJointPointer)*
-		((_cubitLength*std::cos(*_secondJointPointer)) + (_cubitLength*std::cos(*_secondJointPointer + *_thirdJointPointer)));
-	_z = _shoulderLength +
-		((_cubitLength*std::sin(*_secondJointPointer)) + (_handBrushLength*std::sin(*_secondJointPointer + *_thirdJointPointer)));
-
-	std::cout << "\nValue X=" << _x;
-	std::cout << "\tValue Y=" << _y;
-	std::cout << "\tValue Z=" << _z<<std::endl;
-
+	std::cout << "\nValue J1=" << *_firstJoint << " in radians";
+	std::cout << "\t\tValue J2=" << *_secondJoint << " in radians";
+	std::cout << "\t\tValue J3=" << *_thirdJoint << " in radians";
 }
 
 void Calculating::CalculateInverseTaskNotPtr(float* _xPointer, float* _yPointer, float* _zPointer,
@@ -96,7 +64,39 @@ void Calculating::CalculateInverseTaskNotPtr(float* _xPointer, float* _yPointer,
 
 	std::cout << "\nValue J1=" << _firstJoint << " in degrees";
 	std::cout << "\t\tValue J2=" << _secondJoint << " in degrees";
-	std::cout << "\t\tValue J3=" << _thirdJoint << " in degrees" << std::endl;;
+	std::cout << "\t\tValue J3=" << _thirdJoint << " in degrees";
+}
+
+void Calculating::CalculateDirectTask(float* _firstJointPointer, float* _secondJointPointer, float* _thirdJointPointer,
+	float* _x, float* _y, float* _z)
+{
+	*_x = std::cos(*_firstJointPointer)*
+		((_cubitLength*std::cos(*_secondJointPointer)) + (_handBrushLength*std::cos(*_secondJointPointer + *_thirdJointPointer)));
+	*_y = std::sin(*_firstJointPointer)*
+		((_cubitLength*std::cos(*_secondJointPointer)) + (_cubitLength*std::cos(*_secondJointPointer + *_thirdJointPointer)));
+	*_z = _shoulderLength +
+		((_cubitLength*std::sin(*_secondJointPointer)) + (_handBrushLength*std::sin(*_secondJointPointer + *_thirdJointPointer)));
+
+	std::cout << "\nValue X=" << *_x;
+	std::cout << "\tValue Y=" << *_y;
+	std::cout << "\tValue Z=" << *_z;
+
+}
+
+void Calculating::CalculateDirectTaskNotPtr(float* _firstJointPointer, float* _secondJointPointer, float* _thirdJointPointer,
+	float _x, float _y, float _z)
+{
+	_x = std::cos(*_firstJointPointer)*
+		((_cubitLength*std::cos(*_secondJointPointer)) + (_handBrushLength*std::cos(*_secondJointPointer + *_thirdJointPointer)));
+	_y = std::sin(*_firstJointPointer)*
+		((_cubitLength*std::cos(*_secondJointPointer)) + (_cubitLength*std::cos(*_secondJointPointer + *_thirdJointPointer)));
+	_z = _shoulderLength +
+		((_cubitLength*std::sin(*_secondJointPointer)) + (_handBrushLength*std::sin(*_secondJointPointer + *_thirdJointPointer)));
+
+	std::cout << "\nValue X=" << _x;
+	std::cout << "\tValue Y=" << _y;
+	std::cout << "\tValue Z=" << _z;
+
 }
 
 Calculating::~Calculating()
