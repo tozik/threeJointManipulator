@@ -8,12 +8,12 @@ class Calculating
 public:
 
 	Calculating();
-	void CalculateDirectTask(float*,float*,float*, float*, float*, float*);
+	void static CalculateDirectTask(float*, float*, float*, float*, float*, float*);
 	void static CalculateInverseTask(float*, float*, float*, float*, float*, float*);
-	//void CalculateDirectTask(float, float, float, float*, float*, float*);
+
 	void static CalculateDirectTaskNotPtr(float*, float*, float*, float, float, float);
 	void static CalculateInverseTaskNotPtr(float*, float*, float*, float, float, float);
-	void taskCalc(float* );
+	void taskCalc(float*);
 	~Calculating();
 };
 
