@@ -154,6 +154,7 @@
     <ClInclude Include="Calculating.h" />
     <ClInclude Include="Connection.h" />
     <ClInclude Include="InteractionWithUser.h" />
+    <ClInclude Include="Packing.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ReadingClass.h" />
     <ClInclude Include="Remy H-B method.h" />
@@ -162,6 +163,7 @@
     <ClCompile Include="Calculating.cpp" />
     <ClCompile Include="Connection.cpp" />
     <ClCompile Include="InteractionWithUser.cpp" />
+    <ClCompile Include="Packing.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
