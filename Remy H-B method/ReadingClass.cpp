@@ -8,15 +8,15 @@
 
 using namespace std;
 
-string fileName= "C:\\Users\\tozik\\OneDrive\\Рабочий стол\\RemyRotics\\input.in";
+string fileName = "C:\\Users\\tozik\\OneDrive\\Рабочий стол\\RemyRotics\\";
 ifstream _fileReader;
 vector<float> pointsOfMoving;
 
-ReadingClass::ReadingClass()
+ReadingClass::ReadingClass(string name)
 {
 	cout << "\nTrying to open file input.in with data about trajectory\n";
-	cout << "With adress\n" << fileName<<"\n";
-	_fileReader.open(fileName);
+	cout << "With adress\n" << fileName << name << "\n";
+	_fileReader.open(fileName + name);
 }
 
 void ReadingClass::GetLineInstructionsFromFile(vector<float> *pointsPointerFromMain)
@@ -32,11 +32,11 @@ void ReadingClass::GetLineInstructionsFromFile(vector<float> *pointsPointerFromM
 		stringstream ss(value);									//initialise string stream
 		while (ss >> element)
 			pointsPointerFromMain->push_back(::atof(element.c_str()));
-		
+
 		//Debug information about data from file with trajectory
 		//for (int i = 0; i < pointsOfMoving.size(); i++)
 		//	cout << "Component " << i + 1 << " : " << pointsOfMoving[i] << endl;
-	
+
 	}
 	else
 		std::cerr << "Unable to open file" << std::endl;

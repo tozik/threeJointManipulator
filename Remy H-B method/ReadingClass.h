@@ -1,11 +1,12 @@
 #pragma once
 #include <vector>
+#include <string>
 
 class ReadingClass
 {
 public:
 
-	ReadingClass();
+	ReadingClass(std::string name);
 	void GetLineInstructionsFromFile(std::vector<float> *);
 	~ReadingClass();
 };
