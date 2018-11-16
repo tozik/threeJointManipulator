@@ -8,7 +8,7 @@
 
 using namespace std;
 
-string fileName = "C:\\Users\\tozik\\OneDrive\\Рабочий стол\\RemyRotics\\";
+string fileName = "C:\\";
 ifstream _fileReader;
 vector<float> pointsOfMoving;
 
